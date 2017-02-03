@@ -1,0 +1,46 @@
+/*
+ * Copyright (c) 2014, Fashiontec (http://fashiontec.org)
+ * Licensed under LGPL, Version 3
+ */
+ 
+body {
+	/*background-color: #eee;*/
+	color: #000;
+	font-family:Monospace;
+	font-size:15px;
+	text-align:center;
+
+	background-color: #fff;
+	margin: 0px;
+	overflow: hidden;
+}
+
+#info {
+	font-family: sans-serif;
+	font-size: 1em;
+	margin-right: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 10px;
+	display: inline-block;
+	background-color: #1b9996;
+	box-shadow: 0 0 10px #ccc;
+	transition: all .5s ease-in-out;
+}
+
+#info a {
+	text-decoration: none;
+	color: #fff;
+}
+
+#info:hover {
+	box-shadow: 0 0 10px #666;
+}
+
+/*
+#title {
+	position: absolute;
+	top: 0px; width: 100%;
+	padding: 15px;
+}
+*/
