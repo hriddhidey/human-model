@@ -13,6 +13,7 @@
 		
         <div id="info"><a href="female.html">Female</a></div>
 		<div id="info"><a href="kid.html">Boy</a></div>
+		<div id="loading"></div>	
 		
 		<div id="container"></div>
 		<script src="js/three.js"></script>
@@ -48,7 +49,7 @@
          
 			init();
 		
-			animate();
+			animate(finishLoad);
 			
 
 			function init() {
@@ -135,11 +136,16 @@
 				camera.updateProjectionMatrix();
 				renderer.setSize( window.innerWidth, window.innerHeight );
 			}
+			
+			function finishLoad() {
+				document.getElementById("loading").style.display = "none";
+			}
 
 			function animate() {
 				requestAnimationFrame( animate );
 				controls.update();
 				render();
+				callback();
 			}
 
 			function render() {				
