@@ -13,6 +13,7 @@
 		<div id="info"><a href="index.html">Male</a></div>
         <div id="info"><a href="female.html">Female</a></div>
 		<div id="container"></div>
+		<div id="loading"></div>
 		
 		<script src="js/three.js"></script>
 		
@@ -50,7 +51,7 @@
          
 			init();
 		
-			animate();
+			animate(finishload);
 			
 
 			function init() {
@@ -151,15 +152,19 @@
 
 			
 			//
+			
+			function finishLoad() {
+				document.getElementById("loading").style.display = "none";
+			}
 
-			function animate() {
+			function animate(callback) {
           
 				requestAnimationFrame( animate );
 			
 				controls.update();
 
 				render();
-	
+				callback();
 
 			}
 
