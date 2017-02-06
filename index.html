@@ -141,7 +141,7 @@
 				document.getElementById("loading").style.display = "none";
 			}
 
-			function animate() {
+			function animate(callback) {
 				requestAnimationFrame( animate );
 				controls.update();
 				render();
