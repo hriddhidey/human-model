@@ -30,6 +30,7 @@
 			var SCREEN_HEIGHT = window.innerHeight;
 
 			var container;
+			var loaded = false;
 
 			var camera, scene;
 			var renderer;
@@ -49,7 +50,7 @@
          
 			init();
 		
-			animate(finishLoad);
+			animate();
 			
 
 			function init() {
@@ -141,15 +142,18 @@
 				document.getElementById("loading").style.display = "none";
 			}
 
-			function animate(callback) {
+			function animate() {
 				requestAnimationFrame( animate );
 				controls.update();
 				render();
-				callback();
 			}
 
 			function render() {				
 				renderer.render( scene, camera );
+				if(!loaded){
+					finishLoad();
+					loaded = true;
+				}
 			}
 
 		</script>
